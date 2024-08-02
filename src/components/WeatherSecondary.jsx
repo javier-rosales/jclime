@@ -1,6 +1,7 @@
 import WeatherAdditionalInfo from "./WeatherAdditionalInfo"
 
 export default function Secondary({
+  title,
   maxTemperature,
   minTemperature,
   weatherCondition,
@@ -10,6 +11,9 @@ export default function Secondary({
 }) {
   return (
     <div>
+      <p>
+        {title}
+      </p>
       <p>
         <span>
           {maxTemperature}
