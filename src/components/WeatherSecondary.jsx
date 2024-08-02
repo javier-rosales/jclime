@@ -11,9 +11,9 @@ export default function Secondary({
 }) {
   return (
     <div>
-      <p>
+      <h2>
         {title}
-      </p>
+      </h2>
       <p>
         <span>
           {maxTemperature}
