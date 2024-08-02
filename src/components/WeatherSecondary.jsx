@@ -11,22 +11,24 @@ export default function Secondary({
 }) {
   return (
     <div>
-      <h2>
-        {title}
-      </h2>
-      <p>
-        <span>
-          {maxTemperature}
-          &deg;
-        </span>
-        <span>
-          {minTemperature}
-          &deg;
-        </span>
-      </p>
-      <p>
-        {weatherCondition}
-      </p>
+      <div>
+        <h2>
+          {title}
+        </h2>
+        <p>
+          <span>
+            {maxTemperature}
+            &deg;
+          </span>
+          <span>
+            {minTemperature}
+            &deg;
+          </span>
+        </p>
+        <p>
+          {weatherCondition}
+        </p>
+      </div>
       <WeatherAdditionalInfo
         windSpeed={windSpeed}
         humidity={humidity}
