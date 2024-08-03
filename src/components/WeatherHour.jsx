@@ -3,12 +3,12 @@ export default function WeatherHour({
   time
 }) {
   return (
-    <div>
-      <p>
+    <div className="w-hour">
+      <p className="w-hour__temp">
         {temperature}
         &deg;
       </p>
-      <p>
+      <p className="w-hour__time">
         {time}
       </p>
     </div>

@@ -2,9 +2,9 @@ import WeatherDay from "./WeatherDay"
 
 export default function WeatherNextDays({weatherData}) {
   return (
-    <div>
-      <h2>Next {weatherData.length} days</h2>
-      <div>
+    <div className="w-days">
+      <h2 className="w-days__title">Next {weatherData.length} days</h2>
+      <div className="w-days__list">
         {weatherData.map((weather, index) =>
           <WeatherDay
             key={`${index} ${weather.day}`}

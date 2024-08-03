@@ -10,20 +10,20 @@ export default function WeatherPrimary({
   precipitationProbability
 }) {
   return (
-    <div>
-      <div>
-        <p>
+    <div className="w-pri">
+      <div className="w-pri__main">
+        <p className="w-pri__date">
           {`${day}, ${time}`}
         </p>
-        <p>
-          <span>
+        <p className="w-pri__temp">
+          <span className="w-pri__temp-val">
             {temperature}
           </span>
-          <span>
+          <span className="w-pri__temp-unit">
             &deg;C
           </span>
         </p>
-        <p>
+        <p className="w-pri__cond">
           {weatherCondition}
         </p>
       </div>

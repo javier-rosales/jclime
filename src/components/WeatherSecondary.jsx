@@ -10,22 +10,22 @@ export default function Secondary({
   precipitationProbability
 }) {
   return (
-    <div>
-      <div>
-        <h2>
+    <div className="w-sec">
+      <div className="w-sec__main">
+        <h2 className="w-sec__title">
           {title}
         </h2>
-        <p>
-          <span>
+        <p className="w-sec__temp">
+          <span className="w-sec__temp-max">
             {maxTemperature}
             &deg;
           </span>
-          <span>
+          <span className="w-sec__temp-min">
             {minTemperature}
             &deg;
           </span>
         </p>
-        <p>
+        <p className="w-sec__cond">
           {weatherCondition}
         </p>
       </div>

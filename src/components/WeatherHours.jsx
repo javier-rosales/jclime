@@ -5,11 +5,11 @@ export default function WeatherHours({
   weatherData
 }) {
   return (
-    <div>
-      <h2>
+    <div className="w-hours">
+      <h2 className="w-hours__title">
         {title}
       </h2>
-      <div>
+      <div className="w-hours__list">
         {weatherData.map(weather =>
           <WeatherHour
             key={weather.time}
