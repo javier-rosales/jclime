@@ -68,6 +68,12 @@ main {
     font-size: 0.9rem;
 }
 
+.w-ext-info__icon {
+    width: 1.5rem;
+    height: auto;
+    margin-bottom: 0.2rem;
+}
+
 .w-ext-info__label {
     font-size: 0.8rem;
     color: rgb(150, 150, 150);

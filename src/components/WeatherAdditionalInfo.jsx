@@ -1,3 +1,7 @@
+import IconRain from "/rain.svg"
+import IconDroplet from "/droplet.svg"
+import IconWind from "/wind.svg"
+
 export default function WeatherAdditionalInfo({
   windSpeed,
   humidity,
@@ -6,6 +10,11 @@ export default function WeatherAdditionalInfo({
   return (
     <div className="w-ext-info">
       <div className="w-ext-info__item">
+        <img
+          src={IconWind}
+          className="w-ext-info__icon"
+          alt="Wind icon"
+        />
         <p className="w-ext-info__value">
           {`${windSpeed} m/s`}
         </p>
@@ -15,6 +24,11 @@ export default function WeatherAdditionalInfo({
       </div>
       <div className="w-ext-info__sep"></div>
       <div className="w-ext-info__item">
+        <img
+          src={IconDroplet}
+          className="w-ext-info__icon"
+          alt="Droplet icon"
+        />
         <p className="w-ext-info__value">
           {`${humidity} %`}
         </p>
@@ -24,6 +38,11 @@ export default function WeatherAdditionalInfo({
       </div>
       <div className="w-ext-info__sep"></div>
       <div className="w-ext-info__item">
+        <img
+          src={IconRain}
+          className="w-ext-info__icon"
+          alt="Rain icon"
+        />
         <p className="w-ext-info__value">
           {`${precipitationProbability} %`}
         </p>
