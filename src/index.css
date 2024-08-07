@@ -52,6 +52,7 @@ main {
 .w-ext-info {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1.2rem;
     justify-self: center;
     padding: 0.5rem 2rem;
@@ -70,6 +71,12 @@ main {
 .w-ext-info__label {
     font-size: 0.8rem;
     color: rgb(150, 150, 150);
+}
+
+.w-ext-info__sep {
+    width: 1px;
+    height: 70%;
+    background-color: rgba(245, 245, 245, 0.1);
 }
 
 .w-sec__title,
