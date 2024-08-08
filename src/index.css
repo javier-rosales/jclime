@@ -127,9 +127,28 @@ main {
     color: rgb(150, 150, 150);
 }
 
+.w-days__title {
+    margin-bottom: 2rem;
+}
+
 .w-days__list {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.w-day {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.w-day__day {
+    width: 2.5rem;
+}
+
+.w-day__cond {
+    flex-grow: 1;
+    padding-left: 2rem;
 }
 
 .w-day__cond,
