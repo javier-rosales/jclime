@@ -2,8 +2,8 @@ import WeatherAdditionalInfo from "./WeatherAdditionalInfo"
 
 export default function Secondary({
   title,
-  maxTemperature,
-  minTemperature,
+  temperatureMax,
+  temperatureMin,
   weatherCondition,
   weatherConditionImg,
   windSpeed,
@@ -25,11 +25,11 @@ export default function Secondary({
         </div>
         <p className="w-sec__temp">
           <span className="w-sec__temp-max">
-            {maxTemperature}
+            {temperatureMax}
             &deg;
           </span>
           <span className="w-sec__temp-min">
-            {minTemperature}
+            {temperatureMin}
             &deg;
           </span>
         </p>

@@ -11,8 +11,8 @@ export default function WeatherNextDays({weatherData}) {
             day={weather.day}
             weatherCondition={weather.weatherCondition}
             weatherConditionImg={weather.weatherConditionImg}
-            maxTemperature={weather.maxTemperature}
-            minTemperature={weather.minTemperature}
+            temperatureMax={weather.temperatureMax}
+            temperatureMin={weather.temperatureMin}
           />
         )}
       </div>

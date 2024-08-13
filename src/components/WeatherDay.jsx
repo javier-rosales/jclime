@@ -2,8 +2,8 @@ export default function WeatherDay({
   day,
   weatherCondition,
   weatherConditionImg,
-  maxTemperature,
-  minTemperature
+  temperatureMax,
+  temperatureMin
 }) {
   return (
     <div className="w-day">
@@ -19,11 +19,11 @@ export default function WeatherDay({
       </p>
       <p className="w-day__temp">
         <span className="w-day__temp-max">
-          {maxTemperature}
+          {temperatureMax}
           &deg;
         </span>
         <span className="w-day__temp-min">
-          {minTemperature}
+          {temperatureMin}
           &deg;
         </span>
       </p>
