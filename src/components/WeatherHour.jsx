@@ -1,5 +1,6 @@
 export default function WeatherHour({
   temperature,
+  weatherConditionImg,
   time
 }) {
   return (
@@ -8,6 +9,10 @@ export default function WeatherHour({
         {temperature}
         &deg;
       </p>
+      <img
+        src={weatherConditionImg}
+        className="w-hour__img"
+      />
       <p className="w-hour__time">
         {time}
       </p>

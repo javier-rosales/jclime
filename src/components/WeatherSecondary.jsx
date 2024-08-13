@@ -5,6 +5,7 @@ export default function Secondary({
   maxTemperature,
   minTemperature,
   weatherCondition,
+  weatherConditionImg,
   windSpeed,
   humidity,
   precipitationProbability
@@ -15,6 +16,13 @@ export default function Secondary({
         <h2 className="w-sec__title">
           {title}
         </h2>
+        <div className="w-sec__img-cont">
+          <div className="w-sec__img-bg"></div>
+          <img
+            src={weatherConditionImg}
+            className="w-sec__img"
+          />
+        </div>
         <p className="w-sec__temp">
           <span className="w-sec__temp-max">
             {maxTemperature}

@@ -14,6 +14,7 @@ export default function WeatherHours({
           <WeatherHour
             key={weather.time}
             temperature={weather.temperature}
+            weatherConditionImg={weather.weatherConditionImg}
             time={weather.time}
           />
         )}

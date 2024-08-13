@@ -10,6 +10,7 @@ export default function WeatherNextDays({weatherData}) {
             key={`${index} ${weather.day}`}
             day={weather.day}
             weatherCondition={weather.weatherCondition}
+            weatherConditionImg={weather.weatherConditionImg}
             maxTemperature={weather.maxTemperature}
             minTemperature={weather.minTemperature}
           />

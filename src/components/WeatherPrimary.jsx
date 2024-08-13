@@ -4,6 +4,7 @@ export default function WeatherPrimary({
   day,
   time,
   weatherCondition,
+  weatherConditionImg,
   temperature,
   windSpeed,
   humidity,
@@ -15,6 +16,13 @@ export default function WeatherPrimary({
         <p className="w-pri__date">
           {`${day}, ${time}`}
         </p>
+        <div className="w-pri__img-cont">
+          <div className="w-pri__img-bg"></div>
+          <img
+            src={weatherConditionImg}
+            className="w-pri__img"
+          />
+        </div>
         <p className="w-pri__temp">
           <span className="w-pri__temp-val">
             {temperature}

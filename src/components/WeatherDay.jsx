@@ -1,6 +1,7 @@
 export default function WeatherDay({
   day,
   weatherCondition,
+  weatherConditionImg,
   maxTemperature,
   minTemperature
 }) {
@@ -9,6 +10,10 @@ export default function WeatherDay({
       <p className="w-day__day">
         {day}
       </p>
+      <img
+        src={weatherConditionImg}
+        className="w-day__img"
+      />
       <p className="w-day__cond">
         {weatherCondition}
       </p>
