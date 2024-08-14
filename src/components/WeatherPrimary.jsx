@@ -17,7 +17,12 @@ export default function WeatherPrimary({
           {`${day}, ${time}`}
         </p>
         <div className="w-pri__img-cont">
-          <div className="w-pri__img-bg"></div>
+          <div
+            className="w-pri__img-bg"
+            style={{
+              backgroundImage: `url(${weatherConditionImg})`
+            }}
+          ></div>
           <img
             src={weatherConditionImg}
             className="w-pri__img"

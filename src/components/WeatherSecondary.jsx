@@ -17,7 +17,12 @@ export default function Secondary({
           {title}
         </h2>
         <div className="w-sec__img-cont">
-          <div className="w-sec__img-bg"></div>
+          <div
+            className="w-sec__img-bg"
+            style={{
+              backgroundImage: `url(${weatherConditionImg})`
+            }}
+          ></div>
           <img
             src={weatherConditionImg}
             className="w-sec__img"
