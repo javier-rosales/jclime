@@ -22,13 +22,13 @@ main {
 
 .w-container {
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .w-pri,
 .w-sec {
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .w-pri__main {
@@ -117,7 +117,7 @@ main {
 .w-days__title,
 .w-hours__title {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .w-hours__list {
@@ -185,13 +185,9 @@ main {
     margin-top: 0.4rem;
 }
 
-.w-days__title {
-    margin-bottom: 2rem;
-}
-
 .w-days__list {
     display: grid;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .w-day {
