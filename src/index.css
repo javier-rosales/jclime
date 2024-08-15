@@ -163,8 +163,8 @@ main {
 
 .w-sec__img-cont {
     grid-area: img;
-    justify-self: end;
-    align-self: end;
+    justify-self: center;
+    align-self: center;
     margin-right: 2rem;
 }
 
@@ -229,6 +229,14 @@ main {
 @media (min-width: 768px) {
     main {
         gap: 5rem;
+    }
+
+    .w-sec__main {
+        grid-template-columns: 45% 1fr;
+    }
+
+    .w-sec__img-cont {
+        justify-self: end;
     }
 }
 
