@@ -245,7 +245,6 @@ main {
         grid-template-areas:
             "today tomorrow"
             "today next-days";
-        grid-template-rows: 1fr 1fr;
         align-items: start;
         max-width: 1024px;
         margin: 0 auto;
