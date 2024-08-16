@@ -4,6 +4,7 @@ import WeatherPrimary from './components/WeatherPrimary'
 import WeatherSecondary from './components/WeatherSecondary'
 import WeatherNextDays from './components/WeatherNextDays'
 import WeatherHours from './components/WeatherHours'
+import Loading from './components/Loading'
 import weatherService from './services/weather'
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
           </WeatherContainer>
         </main>
       :
-        <p>Loading...</p>
+        <Loading />
   )
 }
 
