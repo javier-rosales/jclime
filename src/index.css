@@ -20,6 +20,10 @@ main {
     gap: 4rem;
 }
 
+.loading {
+    justify-self: center;
+}
+
 .w-container {
     display: grid;
     gap: 2rem;
