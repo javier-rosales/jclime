@@ -132,7 +132,6 @@ main {
     gap: 0.5rem;
     width: max-content;
     padding: 0.5rem 0.7rem;
-    border: 1px solid rgba(245, 245, 245, 0.1);
     border-radius: 0.5rem;
     background-color: rgba(150, 150, 150, 0.1);
     font-size: 0.9rem;
