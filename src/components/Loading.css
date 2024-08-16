@@ -6,7 +6,7 @@
 .loading__dot {
     width: 1em;
     aspect-ratio: 1;
-    background-color: #fff;
+    background-color: rgb(245, 245, 245);
     border-radius: 50%;
     animation: 0.3s infinite alternate dot-pulse;
     animation-timing-function: linear;
@@ -23,6 +23,6 @@
 
     to {
         transform: scale(0.5);
-        background-color: #aaa;
+        background-color: rgb(150, 150, 150);
     }
 }
