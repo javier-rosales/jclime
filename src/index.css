@@ -32,7 +32,6 @@ main {
 
 .w-loc {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 0.7rem;
 }
@@ -255,6 +254,14 @@ main {
 @media (min-width: 768px) {
     main {
         gap: 3rem;
+    }
+
+    .w-loc__icon {
+        width: 1.4rem;
+    }
+
+    .w-loc__title {
+        font-size: 1.4rem;
     }
 
     .w-sec__main {
