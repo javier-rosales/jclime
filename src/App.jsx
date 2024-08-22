@@ -44,7 +44,7 @@ function App() {
                 precipitationProbability={current.precipitationProbability}
               />
               <WeatherHours
-                title="Today"
+                title="Next hours"
                 weatherData={nextHours}
               />
             </WeatherContainer>
