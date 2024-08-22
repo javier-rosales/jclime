@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import WeatherContainer from './components/WeatherContainer'
+import LocationDisplay from './components/LocationDisplay'
 import WeatherPrimary from './components/WeatherPrimary'
 import WeatherSecondary from './components/WeatherSecondary'
 import WeatherNextDays from './components/WeatherNextDays'
@@ -31,6 +32,9 @@ function App() {
       {weatherData
         ?
           <>
+            <LocationDisplay
+              title="El Rosario, Cuautitlan Izcalli"
+            />
             <WeatherContainer>
               <WeatherPrimary
                 date={current.date}

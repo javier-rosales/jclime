@@ -17,7 +17,7 @@ body {
 
 main {
     display: grid;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .loading {
@@ -28,6 +28,22 @@ main {
 .w-container {
     display: grid;
     gap: 2rem;
+}
+
+.w-loc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.w-loc__icon {
+    width: 1.3rem;
+}
+
+.w-loc__title {
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .w-pri,
@@ -238,7 +254,7 @@ main {
 
 @media (min-width: 768px) {
     main {
-        gap: 5rem;
+        gap: 3rem;
     }
 
     .w-sec__main {
@@ -253,12 +269,17 @@ main {
 @media (min-width: 1024px) {
     main {
         grid-template-areas:
-            "today tomorrow"
-            "today next-days";
+            "location location"
+            "today    tomorrow"
+            "today    next-days";
         align-items: start;
         max-width: 1024px;
         margin: 0 auto;
         padding: 1rem;
+    }
+
+    .w-loc {
+        grid-area: location;
     }
 
     .w-container {
