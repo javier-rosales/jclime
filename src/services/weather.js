@@ -57,6 +57,7 @@ async function getFilteredData(location) {
 
     const currentData = findDataByTimestep("current", data)[0]
     const current = {
+        date: formatDate(currentData.startTime),
         day: getDayName(currentData.startTime),
         time: get12HourTime(currentData.startTime),
         weatherCondition: getWeatherCondition(currentData.values.weatherCode),
@@ -119,6 +120,18 @@ function getImg(weatherCode, images) {
             return path.replace("/public", "")
         }
     }
+}
+
+function formatDate(isoDateTime) {
+    const date = new Date(isoDateTime)
+
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    }).format(date)
+
+    return formattedDate
 }
 
 function getDayName(isoDateTime) {

@@ -1,6 +1,7 @@
 import WeatherAdditionalInfo from "./WeatherAdditionalInfo"
 
 export default function WeatherPrimary({
+  date,
   day,
   time,
   weatherCondition,
@@ -13,9 +14,14 @@ export default function WeatherPrimary({
   return (
     <div className="w-pri">
       <div className="w-pri__main">
-        <p className="w-pri__date">
+        <div className="w-pri__info-header">
+          <p className="w-pri__date-text">
+            {date}
+          </p>
+          <p className="w-pri__daytime">
           {`${day}, ${time}`}
-        </p>
+          </p>
+        </div>
         <div className="w-pri__img-cont">
           <div
             className="w-pri__img-bg"

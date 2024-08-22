@@ -33,6 +33,7 @@ function App() {
           <>
             <WeatherContainer>
               <WeatherPrimary
+                date={current.date}
                 day={current.day}
                 time={current.time}
                 weatherCondition={current.weatherCondition}
