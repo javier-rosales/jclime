@@ -286,16 +286,16 @@ main {
         gap: 4rem;
     }
 
-    main .w-container:nth-of-type(1) {
+    main .w-container:nth-of-type(2) {
         grid-area: today;
     }
 
-    main .w-container:nth-of-type(2) {
+    main .w-container:nth-of-type(3) {
         grid-area: tomorrow;
         align-self: end;
     }
 
-    main .w-container:nth-of-type(3) {
+    main .w-container:nth-of-type(4) {
         grid-area: next-days;
         align-self: start;
     }
