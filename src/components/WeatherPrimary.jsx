@@ -18,9 +18,9 @@ export default function WeatherPrimary({
           <p className="w-pri__date-text">
             {date}
           </p>
-          <p className="w-pri__daytime">
+          <h3 className="w-pri__daytime">
           {`${day}, ${time}`}
-          </p>
+          </h3>
         </div>
         <div className="w-pri__img-cont">
           <div

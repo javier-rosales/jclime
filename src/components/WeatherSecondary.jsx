@@ -13,9 +13,9 @@ export default function Secondary({
   return (
     <div className="w-sec">
       <div className="w-sec__main">
-        <h2 className="w-sec__title">
+        <h3 className="w-sec__title">
           {title}
-        </h2>
+        </h3>
         <div className="w-sec__img-cont">
           <div
             className="w-sec__img-bg"

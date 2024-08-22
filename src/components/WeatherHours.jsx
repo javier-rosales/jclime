@@ -6,9 +6,9 @@ export default function WeatherHours({
 }) {
   return (
     <div className="w-hours">
-      <h2 className="w-hours__title">
+      <h3 className="w-hours__title">
         {title}
-      </h2>
+      </h3>
       <div className="w-hours__list">
         {weatherData.map(weather =>
           <WeatherHour
