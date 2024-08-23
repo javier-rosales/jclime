@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import AppLogo from './components/AppLogo'
 import WeatherContainer from './components/WeatherContainer'
 import LocationDisplay from './components/LocationDisplay'
 import WeatherPrimary from './components/WeatherPrimary'
@@ -28,52 +29,57 @@ function App() {
   }, [location])
 
   return (
-    <main>
-      {weatherData
-        ?
-          <>
-            <LocationDisplay
-              title="El Rosario, Cuautitlan Izcalli"
-            />
-            <WeatherContainer>
-              <WeatherPrimary
-                date={current.date}
-                day={current.day}
-                time={current.time}
-                weatherCondition={current.weatherCondition}
-                weatherConditionImg={current.weatherConditionImg}
-                temperature={current.temperature}
-                windSpeed={current.windSpeed}
-                humidity={current.humidity}
-                precipitationProbability={current.precipitationProbability}
+    <>
+      <header>
+        <AppLogo />
+      </header>
+      <main>
+        {weatherData
+          ?
+            <>
+              <LocationDisplay
+                title="El Rosario, Cuautitlan Izcalli"
               />
-              <WeatherHours
-                title="Next hours"
-                weatherData={nextHours}
-              />
-            </WeatherContainer>
-            <WeatherContainer>
-              <WeatherSecondary
-                title="Tomorrow"
-                temperatureMax={tomorrow.temperatureMax}
-                temperatureMin={tomorrow.temperatureMin}
-                weatherCondition={tomorrow.weatherCondition}
-                weatherConditionImg={tomorrow.weatherConditionImg}
-                windSpeed={tomorrow.windSpeed}
-                humidity={tomorrow.humidity}
-                precipitationProbability={tomorrow.precipitationProbability}
-              />
-            </WeatherContainer>
-            <WeatherContainer>
-              <WeatherNextDays
-                weatherData={nextDays}
-              />
-            </WeatherContainer>
-          </>
-        :
-          <Loading />
-      }
-    </main>
+              <WeatherContainer>
+                <WeatherPrimary
+                  date={current.date}
+                  day={current.day}
+                  time={current.time}
+                  weatherCondition={current.weatherCondition}
+                  weatherConditionImg={current.weatherConditionImg}
+                  temperature={current.temperature}
+                  windSpeed={current.windSpeed}
+                  humidity={current.humidity}
+                  precipitationProbability={current.precipitationProbability}
+                />
+                <WeatherHours
+                  title="Next hours"
+                  weatherData={nextHours}
+                />
+              </WeatherContainer>
+              <WeatherContainer>
+                <WeatherSecondary
+                  title="Tomorrow"
+                  temperatureMax={tomorrow.temperatureMax}
+                  temperatureMin={tomorrow.temperatureMin}
+                  weatherCondition={tomorrow.weatherCondition}
+                  weatherConditionImg={tomorrow.weatherConditionImg}
+                  windSpeed={tomorrow.windSpeed}
+                  humidity={tomorrow.humidity}
+                  precipitationProbability={tomorrow.precipitationProbability}
+                />
+              </WeatherContainer>
+              <WeatherContainer>
+                <WeatherNextDays
+                  weatherData={nextDays}
+                />
+              </WeatherContainer>
+            </>
+          :
+            <Loading />
+        }
+      </main>
+    </>
   )
 }
 
