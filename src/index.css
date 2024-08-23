@@ -316,6 +316,7 @@ main > :nth-child(3) {
             "today    tomorrow"
             "today    next-days";
         align-items: start;
+        column-gap: 5rem;
         padding: 1rem;
     }
 
@@ -329,11 +330,13 @@ main > :nth-child(3) {
 
     main > :nth-child(2) {
         grid-area: today;
+        margin-bottom: 0;
     }
 
     main > :nth-child(3) {
         grid-area: tomorrow;
         align-self: end;
+        margin-bottom: 3rem;
     }
 
     main > :nth-child(4) {
