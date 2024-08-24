@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AppLogo from './components/AppLogo'
+import PlaceSearch from './components/PlaceSearch'
 import WeatherContainer from './components/WeatherContainer'
 import LocationDisplay from './components/LocationDisplay'
 import WeatherPrimary from './components/WeatherPrimary'
@@ -32,6 +33,7 @@ function App() {
     <>
       <header>
         <AppLogo />
+        <PlaceSearch />
       </header>
       <main>
         {weatherData
