@@ -35,7 +35,10 @@ export default function PlaceSearch() {
   )
 
   async function handleSelect(placeId) {
-    const placeLocation = await placesService.getPlaceLocation(placeId, sessionToken)
+    const placeLocation = await placesService.getPlaceLocation(
+      placeId,
+      sessionToken
+    )
     setIsNewSession(true)
     console.log(placeLocation)
 
@@ -52,15 +55,21 @@ export default function PlaceSearch() {
         className="plc-srch__input"
       />
       <ul className="plc-srch__list">
-        {suggestions.map(suggestion => (
-          <li
-            className="plc-srch__item"
-            key={suggestion.placePrediction.placeId}
-            onClick={() => handleSelect(suggestion.placePrediction.placeId)}
-          >
-            {suggestion.placePrediction.text.text}
+        {suggestions.map(suggestion => {
+          const suggestionId = suggestion.placePrediction.placeId
+          const suggestionName = suggestion.placePrediction.text.text
+
+          return (
+            <li
+              className="plc-srch__item"
+              key={suggestionId}
+              onClick={() => handleSelect(suggestionId)}
+            >
+              {suggestionName}
           </li>
-        ))}
+          )
+        })
+        }
       </ul>
     </div>
   )
