@@ -11,6 +11,7 @@ import WeatherHours from './components/WeatherHours'
 import Loading from './components/Loading'
 import GitHubProfile from './components/GitHubProfile'
 import weatherService from './services/weather'
+import LogoTomorrowApi from '/powered-by-tomorrow.svg'
 
 function App() {
   const [location, setLocation] = useLocalStorage(
@@ -99,6 +100,11 @@ function App() {
         <GitHubProfile
           username="javier-rosales"
           profileLink="https://github.com/javier-rosales"
+        />
+        <img
+          src={LogoTomorrowApi}
+          className="attr"
+          alt="Tomorrow io attribution"
         />
       </footer>
     </>
