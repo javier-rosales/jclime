@@ -1,0 +1,11 @@
+.gh-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+}
+
+.gh-icon {
+    width: 1.5rem;
+}

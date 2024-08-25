@@ -9,6 +9,7 @@ import WeatherSecondary from './components/WeatherSecondary'
 import WeatherNextDays from './components/WeatherNextDays'
 import WeatherHours from './components/WeatherHours'
 import Loading from './components/Loading'
+import GitHubProfile from './components/GitHubProfile'
 import weatherService from './services/weather'
 
 function App() {
@@ -94,6 +95,12 @@ function App() {
             <Loading />
         }
       </main>
+      <footer>
+        <GitHubProfile
+          username="javier-rosales"
+          profileLink="https://github.com/javier-rosales"
+        />
+      </footer>
     </>
   )
 }
