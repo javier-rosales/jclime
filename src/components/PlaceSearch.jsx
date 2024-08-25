@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce'
 import {v4 as uuidv4} from 'uuid'
 import placesService from '../services/places'
 
-export default function PlaceSearch() {
+export default function PlaceSearch({updateLocation, updateLocationName}) {
   const [query, setQuery] = useState("")
   const [suggestions, setSuggestions] = useState([])
   const [sessionToken, setSessionToken] = useState("")
@@ -34,15 +34,18 @@ export default function PlaceSearch() {
     []
   )
 
-  async function handleSelect(placeId) {
-    const placeLocation = await placesService.getPlaceLocation(
+  async function handleSelect(placeId, placeName) {
+    let placeLocation = await placesService.getPlaceLocation(
       placeId,
       sessionToken
     )
-    setIsNewSession(true)
-    console.log(placeLocation)
+    placeLocation = `${placeLocation.latitude}, ${placeLocation.longitude}`
 
-    // TODO: Update location state in App.jsx to update weather details
+    setIsNewSession(true)
+    setQuery("")
+    setSuggestions([])
+    updateLocation(placeLocation)
+    updateLocationName(placeName)
   }
 
   return (
@@ -63,7 +66,7 @@ export default function PlaceSearch() {
             <li
               className="plc-srch__item"
               key={suggestionId}
-              onClick={() => handleSelect(suggestionId)}
+              onClick={() => handleSelect(suggestionId, suggestionName)}
             >
               {suggestionName}
           </li>

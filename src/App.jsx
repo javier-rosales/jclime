@@ -12,6 +12,7 @@ import weatherService from './services/weather'
 
 function App() {
   const [location, setLocation] = useState("19.680691, -99.257362") // Test fixed location
+  const [locationName, setLocationName] = useState("El Rosario, Cuautitlan Izcalli")
   const [weatherData, setWeatherData] = useState(null)
 
   const {
@@ -22,6 +23,8 @@ function App() {
   } = weatherData || {}
 
   useEffect(() => {
+    setWeatherData(null)
+    
     weatherService
       .getFilteredData(location)
       .then(retrievedData => {
@@ -33,14 +36,17 @@ function App() {
     <>
       <header>
         <AppLogo />
-        <PlaceSearch />
+        <PlaceSearch
+          updateLocation={setLocation}
+          updateLocationName={setLocationName}
+        />
       </header>
       <main>
         {weatherData
           ?
             <>
               <LocationDisplay
-                title="El Rosario, Cuautitlan Izcalli"
+                title={locationName}
               />
               <WeatherContainer>
                 <WeatherPrimary
