@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useLocalStorage from './hooks/useLocalStorage'
 import AppLogo from './components/AppLogo'
 import PlaceSearch from './components/PlaceSearch'
 import WeatherContainer from './components/WeatherContainer'
@@ -11,8 +12,14 @@ import Loading from './components/Loading'
 import weatherService from './services/weather'
 
 function App() {
-  const [location, setLocation] = useState("19.680691, -99.257362") // Test fixed location
-  const [locationName, setLocationName] = useState("El Rosario, Cuautitlan Izcalli")
+  const [location, setLocation] = useLocalStorage(
+    "location",
+    "19.680691, -99.257362"
+  ) // Test fixed location
+  const [locationName, setLocationName] = useLocalStorage(
+    "locationName",
+    "El Rosario, Cuautitlan Izcalli"
+  )
   const [weatherData, setWeatherData] = useState(null)
 
   const {
