@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import debounce from 'lodash/debounce'
 import {v4 as uuidv4} from 'uuid'
 import placesService from '../services/places'
+import IconGoogle from '/google.png'
 
 export default function PlaceSearch({updateLocation, updateLocationName}) {
   const [query, setQuery] = useState("")
@@ -57,23 +58,34 @@ export default function PlaceSearch({updateLocation, updateLocationName}) {
         placeholder="Search place"
         className="plc-srch__input"
       />
-      <ul className="plc-srch__list">
-        {suggestions.map(suggestion => {
-          const suggestionId = suggestion.placePrediction.placeId
-          const suggestionName = suggestion.placePrediction.text.text
+      {suggestions.length > 0 &&
+        <div className="plc-srch__suggestions">
+          <ul className="plc-srch__list">
+            {suggestions.map(suggestion => {
+              const suggestionId = suggestion.placePrediction.placeId
+              const suggestionName = suggestion.placePrediction.text.text
 
-          return (
-            <li
-              className="plc-srch__item"
-              key={suggestionId}
-              onClick={() => handleSelect(suggestionId, suggestionName)}
-            >
-              {suggestionName}
-          </li>
-          )
-        })
-        }
-      </ul>
+              return (
+                <li
+                  className="plc-srch__item"
+                  key={suggestionId}
+                  onClick={() => handleSelect(suggestionId, suggestionName)}
+                >
+                  {suggestionName}
+              </li>
+              )
+            })
+            }
+          </ul>
+          <div className="plc-srch__attr">
+            <img
+              src={IconGoogle}
+              className="plc-srch__google-icon"
+              alt="Google icon"
+            />
+          </div>
+        </div>
+      }
     </div>
   )
 }
