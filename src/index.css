@@ -226,9 +226,11 @@ main > :nth-child(3) {
 }
 
 .w-hours__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     justify-content: space-between;
-    gap: 0.1rem;
+    column-gap: 0.1rem;
+    row-gap: 1rem;
 }
 
 .w-hour {
@@ -356,6 +358,10 @@ footer {
         font-size: 1.4rem;
     }
 
+    .w-hours__list {
+        grid-template-columns: repeat(8, auto);
+    }
+
     .w-sec__main {
         grid-template-columns: 45% 1fr;
     }
@@ -438,6 +444,10 @@ footer {
     .w-hours__title {
         font-size: 1.3rem;
         margin-bottom: 2rem;
+    }
+
+    .w-hours__list {
+        grid-template-columns: repeat(4, auto);
     }
 
     .w-sec__main {

@@ -68,7 +68,7 @@ async function getFilteredData(location) {
         precipitationProbability: round(currentData.values.precipitationProbability)
     }
 
-    const nextHours = findDataByTimestep("1h", data).slice(1, 5)
+    const nextHours = findDataByTimestep("1h", data).slice(1, 9)
         .map(nextHourData => ({
             temperature: round(nextHourData.values.temperature),
             weatherConditionImg: getImg(nextHourData.values.weatherCode, weatherIconsSm),
