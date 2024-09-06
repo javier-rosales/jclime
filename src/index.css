@@ -91,6 +91,7 @@ header {
 
 main {
     display: grid;
+    grid-template-rows: auto auto 1fr;
     gap: 1rem;
 }
 
@@ -425,13 +426,11 @@ footer {
 
     main > :nth-child(3) {
         grid-area: tomorrow;
-        align-self: end;
         margin-bottom: 3rem;
     }
 
     main > :nth-child(4) {
         grid-area: next-days;
-        align-self: start;
     }
 
     .w-pri,
