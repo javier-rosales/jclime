@@ -4,6 +4,7 @@ import {v4 as uuidv4} from 'uuid'
 import placesService from '../services/places'
 import IconGoogle from '/google.png'
 import IconXMark from '/x-mark.svg'
+import IconSearch from '/search.svg'
 
 export default function PlaceSearch({updateLocation, updateLocationName}) {
   const [query, setQuery] = useState("")
@@ -52,6 +53,11 @@ export default function PlaceSearch({updateLocation, updateLocationName}) {
 
   return (
     <div className="plc-srch">
+      <img
+        src={IconSearch}
+        className="plc-srch__search-icon"
+        alt="Search icon"
+      />
       <input
         type="text"
         value={query}
