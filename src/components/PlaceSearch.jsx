@@ -3,6 +3,7 @@ import debounce from 'lodash/debounce'
 import {v4 as uuidv4} from 'uuid'
 import placesService from '../services/places'
 import IconGoogle from '/google.png'
+import IconXMark from '/x-mark.svg'
 
 export default function PlaceSearch({updateLocation, updateLocationName}) {
   const [query, setQuery] = useState("")
@@ -58,6 +59,21 @@ export default function PlaceSearch({updateLocation, updateLocationName}) {
         placeholder="Search place"
         className="plc-srch__input"
       />
+      {query.length > 0 &&
+        <button
+          className="plc-srch__clear-btn"
+          onClick={() => {
+            setQuery("")
+            setSuggestions([])
+          }}
+        >
+          <img
+            src={IconXMark}
+            className="plc-srch__clear-icon"
+            alt="Clear input"
+          />
+        </button>
+      }
       {suggestions.length > 0 &&
         <div className="plc-srch__suggestions">
           <ul className="plc-srch__list">
