@@ -23,9 +23,9 @@ function App() {
     "El Rosario, Cuautitlan Izcalli"
   )
   const [weatherData, setWeatherData] = useState(null)
+  const [currentWeatherData, setCurrentWeatherData] = useState(null)
 
   const {
-    current,
     nextHours,
     tomorrow,
     nextDays
@@ -38,6 +38,7 @@ function App() {
       .getFilteredData(location)
       .then(retrievedData => {
         setWeatherData(retrievedData)
+        setCurrentWeatherData(retrievedData.nextHours[0])
       })
   }, [location])
 
@@ -59,19 +60,12 @@ function App() {
               />
               <WeatherContainer>
                 <WeatherPrimary
-                  date={current.date}
-                  day={current.day}
-                  time={current.time}
-                  weatherCondition={current.weatherCondition}
-                  weatherConditionImg={current.weatherConditionImg}
-                  temperature={current.temperature}
-                  windSpeed={current.windSpeed}
-                  humidity={current.humidity}
-                  precipitationProbability={current.precipitationProbability}
+                  weatherData={currentWeatherData}
                 />
                 <WeatherHours
                   title="Next hours"
                   weatherData={nextHours}
+                  onWeatherHourSelect={setCurrentWeatherData}
                 />
               </WeatherContainer>
               <WeatherContainer>

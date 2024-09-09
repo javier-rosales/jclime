@@ -1,20 +1,22 @@
 export default function WeatherHour({
-  temperature,
-  weatherConditionImg,
-  time
+  weatherData,
+  onSelect,
+  isSelected
 }) {
   return (
-    <div className="w-hour">
+    <div className={`w-hour ${isSelected && "selected"}`}
+      onClick={onSelect}
+    >
       <p className="w-hour__temp">
-        {temperature}
+        {weatherData.temperature}
         &deg;
       </p>
       <img
-        src={weatherConditionImg}
+        src={weatherData.weatherConditionImg}
         className="w-hour__img"
       />
       <p className="w-hour__time">
-        {time}
+        {weatherData.time}
       </p>
     </div>
   )

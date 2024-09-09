@@ -273,9 +273,19 @@ main > :nth-child(3) {
     gap: 0.5rem;
     width: max-content;
     padding: 0.5rem 0.7rem;
+    outline: 1px solid rgb(150, 150, 150);
     border-radius: 0.5rem;
     background-color: rgba(150, 150, 150, 0.1);
     font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.w-hour:hover {
+    background-color: rgba(150, 150, 150, 0.25);
+}
+
+.w-hour.selected {
+    outline: 2px solid rgb(245, 245, 245);
 }
 
 .w-hour__img {

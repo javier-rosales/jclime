@@ -1,9 +1,18 @@
+import { useState } from "react"
 import WeatherHour from "./WeatherHour"
 
 export default function WeatherHours({
   title,
-  weatherData
+  weatherData,
+  onWeatherHourSelect
 }) {
+  const [hourSelected, setHourSelected] = useState(weatherData[0].time)
+
+  function handleSelect(weatherData) {
+    onWeatherHourSelect(weatherData)
+    setHourSelected(weatherData.time)
+  }
+
   return (
     <div className="w-hours">
       <h3 className="w-hours__title">
@@ -13,9 +22,9 @@ export default function WeatherHours({
         {weatherData.map(weather =>
           <WeatherHour
             key={weather.time}
-            temperature={weather.temperature}
-            weatherConditionImg={weather.weatherConditionImg}
-            time={weather.time}
+            weatherData={weather}
+            onSelect={() => handleSelect(weather)}
+            isSelected={weather.time === hourSelected}
           />
         )}
       </div>

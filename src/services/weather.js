@@ -68,12 +68,19 @@ async function getFilteredData(location) {
         precipitationProbability: round(currentData.values.precipitationProbability)
     }
 
-    const nextHours = findDataByTimestep("1h", data).slice(1, 9)
+    const nextHours = findDataByTimestep("1h", data).slice(1, 8)
         .map(nextHourData => ({
+            date: formatDate(nextHourData.startTime),
+            day: getDayName(nextHourData.startTime),
+            time: get12HourTime(nextHourData.startTime),
+            weatherCondition: getWeatherCondition(nextHourData.values.weatherCode),
+            weatherConditionImg: getImg(nextHourData.values.weatherCode, weatherIconsXl),
             temperature: round(nextHourData.values.temperature),
-            weatherConditionImg: getImg(nextHourData.values.weatherCode, weatherIconsSm),
-            time: get12HourTime(nextHourData.startTime)
+            windSpeed: round(nextHourData.values.windSpeed),
+            humidity: round(nextHourData.values.humidity),
+            precipitationProbability: round(nextHourData.values.precipitationProbability)
         }))
+    nextHours.unshift(current)
 
     const tomorrowData = findDataByTimestep("1d", data)[1]
     const tomorrow = {
@@ -96,7 +103,6 @@ async function getFilteredData(location) {
         }))
 
     return {
-        current,
         nextHours,
         tomorrow,
         nextDays

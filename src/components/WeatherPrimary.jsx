@@ -1,16 +1,18 @@
 import WeatherAdditionalInfo from "./WeatherAdditionalInfo"
 
-export default function WeatherPrimary({
-  date,
-  day,
-  time,
-  weatherCondition,
-  weatherConditionImg,
-  temperature,
-  windSpeed,
-  humidity,
-  precipitationProbability
-}) {
+export default function WeatherPrimary({weatherData}) {
+  const {
+    date,
+    day,
+    time,
+    weatherCondition,
+    weatherConditionImg,
+    temperature,
+    windSpeed,
+    humidity,
+    precipitationProbability
+  } = weatherData
+  
   return (
     <div className="w-pri">
       <div className="w-pri__main">
