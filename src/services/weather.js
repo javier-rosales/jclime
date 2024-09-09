@@ -61,7 +61,11 @@ async function getFilteredData(location) {
         day: getDayName(currentData.startTime),
         time: get12HourTime(currentData.startTime),
         weatherCondition: getWeatherCondition(currentData.values.weatherCode),
-        weatherConditionImg: getImg(currentData.values.weatherCode, weatherIconsXl),
+        weatherConditionImg: getImg(
+            currentData.values.weatherCode,
+            weatherIconsXl,
+            currentData.startTime
+        ),
         temperature: round(currentData.values.temperature),
         windSpeed: round(currentData.values.windSpeed),
         humidity: round(currentData.values.humidity),
@@ -74,7 +78,11 @@ async function getFilteredData(location) {
             day: getDayName(nextHourData.startTime),
             time: get12HourTime(nextHourData.startTime),
             weatherCondition: getWeatherCondition(nextHourData.values.weatherCode),
-            weatherConditionImg: getImg(nextHourData.values.weatherCode, weatherIconsXl),
+            weatherConditionImg: getImg(
+                nextHourData.values.weatherCode,
+                weatherIconsXl,
+                nextHourData.startTime
+            ),
             temperature: round(nextHourData.values.temperature),
             windSpeed: round(nextHourData.values.windSpeed),
             humidity: round(nextHourData.values.humidity),
@@ -87,7 +95,10 @@ async function getFilteredData(location) {
         temperatureMax: round(tomorrowData.values.temperatureMax),
         temperatureMin: round(tomorrowData.values.temperatureMin),
         weatherCondition: getWeatherCondition(tomorrowData.values.weatherCodeFullDay),
-        weatherConditionImg: getImg(tomorrowData.values.weatherCodeFullDay, weatherIconsLg),
+        weatherConditionImg: getImg(
+            tomorrowData.values.weatherCodeFullDay,
+            weatherIconsLg
+        ),
         windSpeed: round(tomorrowData.values.windSpeed),
         humidity: round(tomorrowData.values.humidity),
         precipitationProbability: round(tomorrowData.values.precipitationProbability)
@@ -97,7 +108,10 @@ async function getFilteredData(location) {
         .map(nextDayData => ({
             day: getDayShortName(nextDayData.startTime),
             weatherCondition: getWeatherCondition(nextDayData.values.weatherCodeFullDay),
-            weatherConditionImg: getImg(nextDayData.values.weatherCodeFullDay, weatherIconsSm),
+            weatherConditionImg: getImg(
+                nextDayData.values.weatherCodeFullDay,
+                weatherIconsSm
+            ),
             temperatureMax: round(nextDayData.values.temperatureMax),
             temperatureMin: round(nextDayData.values.temperatureMin)
         }))
@@ -119,13 +133,29 @@ function getWeatherCondition(weatherCode) {
     return weatherCodes[weatherCode]
 }
 
-function getImg(weatherCode, images) {
-    const regex = new RegExp(`/${weatherCode}0_.*\\.png$`)
-    for (const path of images) {
-        if (regex.test(path)) {
-            return path.replace("/public", "")
+function getImg(weatherCode, images, time) {
+    const regexDay = new RegExp(`/${weatherCode}0_.*\\.png$`)
+    const regexNight = new RegExp(`/${weatherCode}1_.*\\.png$`)
+
+    if (time && isNight(time)) {
+        const nightImage = images.find(path => regexNight.test(path))
+
+        if (nightImage) {
+            return nightImage.replace("/public", "")
         }
     }
+
+    const dayImage = images.find(path => regexDay.test(path))
+
+    return dayImage.replace("/public", "")
+}
+
+function isNight(isoDateTime) {
+    const date = new Date(isoDateTime)
+    const hours = date.getHours()
+    console.log(hours)
+
+    return hours >= 19 || hours < 6
 }
 
 function formatDate(isoDateTime) {
