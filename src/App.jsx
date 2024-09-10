@@ -8,6 +8,7 @@ import WeatherPrimary from './components/WeatherPrimary'
 import WeatherSecondary from './components/WeatherSecondary'
 import WeatherNextDays from './components/WeatherNextDays'
 import WeatherHours from './components/WeatherHours'
+import Welcome from './components/Welcome'
 import Loading from './components/Loading'
 import GitHubProfile from './components/GitHubProfile'
 import weatherService from './services/weather'
@@ -16,11 +17,11 @@ import LogoTomorrowApi from '/powered-by-tomorrow.svg'
 function App() {
   const [location, setLocation] = useLocalStorage(
     "location",
-    "19.680691, -99.257362"
-  ) // Test fixed location
+    null
+  )
   const [locationName, setLocationName] = useLocalStorage(
     "locationName",
-    "El Rosario, Cuautitlan Izcalli"
+    null
   )
   const [weatherData, setWeatherData] = useState(null)
   const [currentWeatherData, setCurrentWeatherData] = useState(null)
@@ -32,14 +33,16 @@ function App() {
   } = weatherData || {}
 
   useEffect(() => {
-    setWeatherData(null)
+    if (location) {
+      setWeatherData(null)
     
-    weatherService
-      .getFilteredData(location)
-      .then(retrievedData => {
-        setWeatherData(retrievedData)
-        setCurrentWeatherData(retrievedData.nextHours[0])
-      })
+      weatherService
+        .getFilteredData(location)
+        .then(retrievedData => {
+          setWeatherData(retrievedData)
+          setCurrentWeatherData(retrievedData.nextHours[0])
+        })
+    }
   }, [location])
 
   return (
@@ -52,8 +55,10 @@ function App() {
         />
       </header>
       <main>
-        {weatherData
-          ?
+        {
+          !location ? (
+            <Welcome />
+          ) : weatherData ? (
             <>
               <LocationDisplay
                 title={locationName}
@@ -86,8 +91,9 @@ function App() {
                 />
               </WeatherContainer>
             </>
-          :
+          ) : (
             <Loading />
+          )
         }
       </main>
       <footer>
