@@ -153,7 +153,6 @@ function getImg(weatherCode, images, time) {
 function isNight(isoDateTime) {
     const date = new Date(isoDateTime)
     const hours = date.getHours()
-    console.log(hours)
 
     return hours >= 19 || hours < 6
 }
