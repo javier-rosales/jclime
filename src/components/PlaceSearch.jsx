@@ -68,7 +68,8 @@ export default function PlaceSearch({updateLocation, updateLocationName}) {
       {query.length > 0 &&
         <button
           className="plc-srch__clear-btn"
-          onClick={() => {
+          onMouseDown={e => {
+            e.preventDefault()
             setQuery("")
             setSuggestions([])
           }}
