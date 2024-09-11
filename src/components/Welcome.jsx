@@ -5,7 +5,7 @@ export default function Welcome() {
                 👋 Welcome to <span className="t-sec">J</span>Clime!
             </h3>
             <p className="welcome-msg__content">
-                Please select a location to get started. Your choice will be saved.
+                Please search for a location to get started. Your choice will be saved.
             </p>
         </div>
     )
