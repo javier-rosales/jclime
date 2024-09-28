@@ -4,7 +4,7 @@ export default function WeatherNextDays({weatherData}) {
   return (
     <div className="w-days">
       <h3 className="w-days__title">
-        Next {weatherData.length} days
+        Siguientes {weatherData.length} días
       </h3>
       <div className="w-days__list">
         {weatherData.map((weather, index) =>

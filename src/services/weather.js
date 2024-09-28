@@ -160,7 +160,7 @@ function isNight(isoDateTime) {
 function formatDate(isoDateTime) {
     const date = new Date(isoDateTime)
 
-    const formattedDate = new Intl.DateTimeFormat("en-US", {
+    const formattedDate = new Intl.DateTimeFormat("es-ES", {
         year: "numeric",
         month: "long",
         day: "numeric"
@@ -171,20 +171,24 @@ function formatDate(isoDateTime) {
 
 function getDayName(isoDateTime) {
     const date = new Date(isoDateTime)
-    const dayName = date.toLocaleDateString("en-US", {
+    const dayName = date.toLocaleDateString("es-ES", {
         weekday: "long"
     })
 
-    return dayName
+    return capitalizeFirstLetter(dayName)
 }
 
 function getDayShortName(isoDateTime) {
     const date = new Date(isoDateTime)
-    const dayShortName = date.toLocaleDateString("en-US", {
+    const dayShortName = date.toLocaleDateString("es-ES", {
         weekday: "short"
     })
 
-    return dayShortName
+    return capitalizeFirstLetter(dayShortName)
+}
+
+function capitalizeFirstLetter(string) {
+    return string[0].toUpperCase() + string.slice(1)
 }
 
 function get12HourTime(isoDateTime) {

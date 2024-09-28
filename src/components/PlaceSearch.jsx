@@ -62,7 +62,7 @@ export default function PlaceSearch({updateLocation, updateLocationName}) {
         type="text"
         value={query}
         onChange={e => handleSearch(e.target.value)}
-        placeholder="Search location"
+        placeholder="Buscar ubicación"
         className="plc-srch__input"
       />
       {query.length > 0 &&

@@ -19,7 +19,7 @@ export default function WeatherAdditionalInfo({
           {`${windSpeed} m/s`}
         </p>
         <p className="w-ext-info__label">
-          Wind
+          Viento
         </p>
       </div>
       <div className="w-ext-info__sep"></div>
@@ -33,7 +33,7 @@ export default function WeatherAdditionalInfo({
           {`${humidity} %`}
         </p>
         <p className="w-ext-info__label">
-          Humidity
+          Humedad
         </p>
       </div>
       <div className="w-ext-info__sep"></div>
@@ -47,7 +47,7 @@ export default function WeatherAdditionalInfo({
           {`${precipitationProbability} %`}
         </p>
         <p className="w-ext-info__label">
-          Rain
+          Lluvia
         </p>
       </div>
     </div>

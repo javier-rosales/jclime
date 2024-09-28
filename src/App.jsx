@@ -68,14 +68,14 @@ function App() {
                   weatherData={currentWeatherData}
                 />
                 <WeatherHours
-                  title="Next hours"
+                  title="Siguientes horas"
                   weatherData={nextHours}
                   onWeatherHourSelect={setCurrentWeatherData}
                 />
               </WeatherContainer>
               <WeatherContainer>
                 <WeatherSecondary
-                  title="Tomorrow"
+                  title="Mañana"
                   temperatureMax={tomorrow.temperatureMax}
                   temperatureMin={tomorrow.temperatureMin}
                   weatherCondition={tomorrow.weatherCondition}

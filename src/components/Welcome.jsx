@@ -2,10 +2,10 @@ export default function Welcome() {
     return (
         <div className="welcome-msg">
             <h3 className="welcome-msg__title">
-                👋 Welcome to <span className="t-sec">J</span>Clime!
+                👋 Bienvenido a <span className="t-sec">J</span>Clime!
             </h3>
             <p className="welcome-msg__content">
-                Please search for a location to get started. Your choice will be saved.
+                Buscar una ubicación para comenzar. Tu elección será guardada.
             </p>
         </div>
     )
