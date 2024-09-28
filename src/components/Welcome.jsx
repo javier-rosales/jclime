@@ -5,7 +5,7 @@ export default function Welcome() {
                 👋 Bienvenido a <span className="t-sec">J</span>Clime!
             </h3>
             <p className="welcome-msg__content">
-                Buscar una ubicación para comenzar. Tu elección será guardada.
+                Busca una ubicación para comenzar. Tu elección será guardada.
             </p>
         </div>
     )
