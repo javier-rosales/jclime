@@ -1,7 +1,7 @@
 import axios from 'axios'
 import weatherCodes from '../assets/weatherCodes'
 
-const API_KEY = "YV1jWoBLDdQl7TPjOOvA6RHpmaXlzgUN"
+const API_KEY = import.meta.env.VITE_KEY_TOMORROW_IO
 const baseUrl = `https://api.tomorrow.io/v4/timelines?apikey=${API_KEY}`
 
 // Information to retrieve from API
@@ -160,7 +160,7 @@ function isNight(isoDateTime) {
 function formatDate(isoDateTime) {
     const date = new Date(isoDateTime)
 
-    const formattedDate = new Intl.DateTimeFormat("es-ES", {
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric"
@@ -171,24 +171,20 @@ function formatDate(isoDateTime) {
 
 function getDayName(isoDateTime) {
     const date = new Date(isoDateTime)
-    const dayName = date.toLocaleDateString("es-ES", {
+    const dayName = date.toLocaleDateString("en-US", {
         weekday: "long"
     })
 
-    return capitalizeFirstLetter(dayName)
+    return dayName
 }
 
 function getDayShortName(isoDateTime) {
     const date = new Date(isoDateTime)
-    const dayShortName = date.toLocaleDateString("es-ES", {
+    const dayShortName = date.toLocaleDateString("en-US", {
         weekday: "short"
     })
 
-    return capitalizeFirstLetter(dayShortName)
-}
-
-function capitalizeFirstLetter(string) {
-    return string[0].toUpperCase() + string.slice(1)
+    return dayShortName
 }
 
 function get12HourTime(isoDateTime) {
