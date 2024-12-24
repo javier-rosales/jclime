@@ -1,7 +1,7 @@
 import axios from 'axios'
 import weatherCodes from '../assets/weatherCodes'
 
-const API_KEY = import.meta.env.KEY_TOMORROW_IO
+const API_KEY = import.meta.env.VITE_KEY_TOMORROW_IO
 const baseUrl = `https://api.tomorrow.io/v4/timelines?apikey=${API_KEY}`
 
 // Information to retrieve from API
