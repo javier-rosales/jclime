@@ -15,7 +15,7 @@ async function getSuggestions (input, sessionToken) {
         ]
     }, {
         params: {
-            key: "AIzaSyDpY8e5w8RPmr5F3zZLu6GfZDTQZvOzVig",
+            key: import.meta.env.KEY_PLACES_API_NEW,
             sessionToken
         }
     })
@@ -27,7 +27,7 @@ async function getPlaceLocation (id, sessionToken) {
     const placeLocationUrl = `${placeDetailsUrl}/${id}`
     const response = await axios.get(placeLocationUrl, {
         params: {
-            key: "AIzaSyDpY8e5w8RPmr5F3zZLu6GfZDTQZvOzVig",
+            key: import.meta.env.KEY_PLACES_API_NEW,
             fields: "location",
             sessionToken
         }
