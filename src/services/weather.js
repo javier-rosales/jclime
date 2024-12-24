@@ -175,7 +175,7 @@ function getDayName(isoDateTime) {
         weekday: "long"
     })
 
-    return dayName
+    return capitalizeFirstLetter(dayName)
 }
 
 function getDayShortName(isoDateTime) {
