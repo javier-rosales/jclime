@@ -1,20 +1,20 @@
 # JClime 🌤️  
-JClime es una aplicación web diseñada para proporcionar información meteorológica precisa de cualquier parte del mundo. Con una interfaz intuitiva, JClime es la solución ideal para mantenerte informado sobre el clima actual, pronósticos por hora y para los próximos días.  
+JClime is a web application designed to provide accurate weather information from anywhere in the world. With an intuitive interface, JClime is the ideal solution to stay informed about current weather conditions, hourly forecasts, and upcoming days.
 
-## Características principales ✨  
-- **Búsqueda con autocompletado**: Encuentra localidades, municipios o estados fácilmente con sugerencias inteligentes.  
-- **Pronóstico detallado**: Información del clima actual, las próximas horas y los próximos días gracias a la API de Tomorrow.io.  
-- **Última ubicación guardada**: Guarda automáticamente tu ubicación preferida en Local Storage para cargarla al iniciar la aplicación.  
+## Main Features ✨  
+- **Autocomplete search**: Easily find cities, towns, or states with smart search suggestions.  
+- **Detailed forecast**: Current weather, hourly forecast, and upcoming days powered by the Tomorrow.io API.  
+- **Last saved location**: Automatically saves your preferred location in Local Storage and loads it when the app starts.  
 
-## Tecnologías utilizadas 🛠️  
+## Technologies Used 🛠️  
 - **Frontend**: React, CSS.  
 - **APIs**:  
-  - [Tomorrow.io](https://www.tomorrow.io/) para datos meteorológicos.  
-  - [Google Places Autocomplete](https://developers.google.com/maps/documentation/places/web-service/place-autocomplete?hl=es-419) para sugerencias de búsqueda.  
-  - [Google Place Details](https://developers.google.com/maps/documentation/places/web-service/place-details?hl=es-419) para obtener información específica sobre los lugares seleccionados.  
-- **Almacenamiento local**: Local Storage para persistir la última ubicación guardada.  
+  - [Tomorrow.io](https://www.tomorrow.io/) for weather data.  
+  - [Google Places Autocomplete](https://developers.google.com/maps/documentation/places/web-service/place-autocomplete) for search suggestions.  
+  - [Google Place Details](https://developers.google.com/maps/documentation/places/web-service/place-details) to retrieve detailed information about selected places.  
+- **Local storage**: Local Storage to persist the last saved location.  
 
-## Uso 📖
-1. Usa la barra de búsqueda para encontrar localidades, municipios o estados.
-2. Selecciona una sugerencia para ver el clima actual y el pronóstico.
-3. La última ubicación que consultes será guardada automáticamente para la próxima vez que uses la aplicación.
+## Usage 📖  
+1. Use the search bar to find cities, towns, or states.  
+2. Select a suggestion to view the current weather and forecast.  
+3. The last location you check will be automatically saved for the next time you use the application.
